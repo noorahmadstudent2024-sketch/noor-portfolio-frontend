@@ -4,447 +4,430 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Noor Ahmad Siddique - Aspiring AI Engineer & Software Developer | Portfolio">
-    <meta name="keywords" content="AI Engineer, Software Developer, HVAC, Web Development, Portfolio">
-    <meta name="author" content="Noor Ahmad Siddique">
-    <title>Noor Ahmad Siddique | AI Engineer & Software Developer</title>
+    <title>Noor Ahmad Siddique | AI Engineer & Developer</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Loader -->
     <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <p>Loading...</p>
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <span class="loader-text">INITIALIZING</span>
         </div>
     </div>
 
-    <!-- Header / Navigation -->
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#home" class="nav-logo">
-                <span class="logo-text">NOOR AHMAD</span>
-                <span class="logo-highlight">SIDDIQUE</span>
+                <span class="logo-bracket">[</span>
+                <span class="logo-name">NOOR</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-ai">AI</span>
+                <span class="logo-bracket">]</span>
             </a>
 
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#education" class="nav-link">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#certifications" class="nav-link">Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
+                    <li><a href="#home"          class="nav-link active"><span class="nav-num">01</span>Home</a></li>
+                    <li><a href="#about"         class="nav-link"><span class="nav-num">02</span>About</a></li>
+                    <li><a href="#bento"         class="nav-link"><span class="nav-num">03</span>Expertise</a></li>
+                    <li><a href="#skills"        class="nav-link"><span class="nav-num">04</span>Skills</a></li>
+                    <li><a href="#education"     class="nav-link"><span class="nav-num">05</span>Education</a></li>
+                    <li><a href="#certifications" class="nav-link"><span class="nav-num">06</span>Certs</a></li>
+                    <li><a href="#projects"      class="nav-link"><span class="nav-num">07</span>Projects</a></li>
+                    <li><a href="#contact"       class="nav-link"><span class="nav-num">08</span>Contact</a></li>
                 </ul>
-                <div class="nav-close" id="nav-close">
+                <button class="nav-close" id="nav-close" aria-label="Close menu">
                     <i class="fas fa-times"></i>
-                </div>
+                </button>
             </div>
 
-            <!-- Dark Mode Toggle -->
-            <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon" id="theme-icon"></i>
-            </div>
-
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero section" id="home">
+    <!-- Main -->
+    <main>
+
+        <!-- ══ HERO ══ -->
+        <section class="hero" id="home">
+            <!-- Scan lines -->
+            <div class="scan-lines"></div>
+            <!-- Grid BG -->
+            <div class="hero-grid"></div>
+
             <div class="hero-container container">
-                <div class="hero-content">
-                    <div class="hero-social">
-                        <a href="https://github.com/noorahmadstudent2024-sketch" target="_blank" class="hero-social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
+
+                <!-- Left: Info -->
+                <div class="hero-info">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Available for opportunities
+                    </div>
+                    <h1 class="hero-name">
+                        <span class="name-line">Noor Ahmad</span>
+                        <span class="name-line name-highlight">Siddique</span>
+                    </h1>
+                    <p class="hero-role">
+                        <span class="role-tag">&lt;</span>
+                        <span id="typed-role">Aspiring AI Engineer</span>
+                        <span class="role-tag">/&gt;</span>
+                    </p>
+                    <p class="hero-desc">
+                        Building intelligent systems at the intersection of <em>Agentic AI</em>, <em>Robotics</em>, and <em>Modern Web</em> — powered by curiosity from Karachi.
+                    </p>
+                    <div class="hero-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</span>
+                        <span><i class="fas fa-circle online"></i> Open to Work</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/noor-ahmad-7b527b343/" target="_blank" class="hero-social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:noorahmad7316125@gmail.com" class="hero-social-link" aria-label="Gmail">
-                            <i class="fab fa-google"></i>
+                        <a href="Noor_CV.pdf" download class="btn btn-ghost">
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
                         </a>
                     </div>
-
-                    <div class="hero-data">
-                        <span class="hero-greeting">Hello, I'm</span>
-                        <h1 class="hero-name">Noor Ahmad Siddique</h1>
-                        <h2 class="hero-title">Aspiring AI Engineer & Software Developer</h2>
-                        <p class="hero-subtitle">
-                            <span class="typing-text">Multidisciplinary Tech Professional</span>
-                            <span class="hero-divider">|</span>
-                            <span class="hero-tags">AI <span class="dot">•</span> Software <span class="dot">•</span> HVAC</span>
-                        </p>
-                        <p class="hero-location">
-                            <i class="fas fa-map-marker-alt"></i> Karachi, Pakistan
-                        </p>
-
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary">
-                                <i class="fas fa-briefcase"></i> View My Work
-                            </a>
-                            <a href="Noor_CV.pdf" download class="btn btn-secondary">
-                                <i class="fas fa-download"></i> Download CV
-                            </a>
-                        </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/noorahmadstudent2024-sketch" target="_blank" class="social-pill">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/noor-ahmad-7b527b343/" target="_blank" class="social-pill">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:noorahmad7316125@gmail.com" class="social-pill">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
                     </div>
                 </div>
 
-                <div class="hero-image">
-                    <div class="hero-image-wrapper">
-                        <img src="images/profile.jpg" alt="Noor Ahmad Siddique" class="hero-profile-img">
-                        <div class="hero-image-blob"></div>
+                <!-- Right: Visual -->
+                <div class="hero-visual">
+
+                    <!-- Terminal -->
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <span class="terminal-title">noor@ai-engineer ~ %</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-body">
+                            <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd" id="t-line1"></span></div>
+                            <div class="terminal-line t-output" id="t-out1"></div>
+                            <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd" id="t-line2"></span></div>
+                            <div class="terminal-line t-output" id="t-out2"></div>
+                            <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd" id="t-line3"></span></div>
+                            <div class="terminal-line t-output" id="t-out3"></div>
+                            <div class="terminal-line t-cursor-line">
+                                <span class="t-prompt">$</span>
+                                <span class="t-blink">▋</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Neural Network Canvas -->
+                    <div class="neural-card">
+                        <div class="neural-label">Neural Network — Active</div>
+                        <canvas id="neural-canvas"></canvas>
+                    </div>
+
                 </div>
             </div>
 
+            <!-- Scroll indicator -->
             <a href="#about" class="hero-scroll">
-                <i class="fas fa-chevron-down"></i>
+                <span class="scroll-text">SCROLL</span>
+                <div class="scroll-line"></div>
             </a>
         </section>
 
-        <!-- About Section -->
+        <!-- ══ ABOUT ══ -->
         <section class="about section" id="about">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">Get To Know</span>
-                    <h2 class="section-title">About Me</h2>
+                    <span class="section-tag">// about_me</span>
+                    <h2 class="section-title">Who I Am</h2>
                 </div>
-
                 <div class="about-container">
-                    <div class="about-image">
-                        <div class="about-image-wrapper">
-                            <img src="images/profile.jpg" alt="Noor Ahmad Siddique" class="about-profile-img">
+                    <div class="about-image-wrap">
+                        <div class="about-img-glow"></div>
+                        <img src="images/profile.jpg" alt="Noor Ahmad Siddique" class="about-profile-img">
+                        <div class="about-img-badge">
+                            <i class="fas fa-robot"></i>
+                            AI Engineer
                         </div>
                     </div>
-
                     <div class="about-content">
                         <div class="about-text">
-                            <p>
-                                I'm Noor Ahmad Siddique, an aspiring AI Engineer and Software Developer with unique expertise spanning software engineering, artificial intelligence, and HVAC systems. Currently pursuing DAE Software Engineering and certified as an Agentic & Robotic AI Engineer from PIAIC, I bring a multidisciplinary approach to problem-solving.
-                            </p>
-                            <p>
-                                What sets me apart is my UN-certification in environmental compliance and hands-on HVAC experience, combined with modern software development skills. I'm passionate about creating sustainable tech solutions and continuously learning emerging technologies.
-                            </p>
-                            <p>
-                                Based in Karachi, I'm seeking opportunities to apply my diverse technical knowledge in innovative roles that bridge traditional engineering with cutting-edge AI and software development.
-                            </p>
+                            <p>I'm <strong>Noor Ahmad Siddique</strong>, an aspiring AI Engineer and Software Developer combining software engineering, artificial intelligence, and HVAC systems expertise.</p>
+                            <p>Currently pursuing <strong>DAE Software Engineering</strong> and certified as an <strong>Agentic & Robotic AI Engineer</strong> from PIAIC — I bring a multidisciplinary approach to every problem.</p>
+                            <p>What makes me unique: a <strong>UN-certification</strong> in environmental compliance and HVAC expertise, merged with modern AI and web development skills.</p>
                         </div>
-
                         <div class="about-stats">
                             <div class="stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
+                                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
                                 <div class="stat-info">
                                     <h3 class="stat-number">18</h3>
                                     <p class="stat-label">Years Old</p>
                                 </div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-project-diagram"></i>
-                                </div>
+                                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
                                 <div class="stat-info">
                                     <h3 class="stat-number">3+</h3>
                                     <p class="stat-label">Projects</p>
                                 </div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-certificate"></i>
-                                </div>
+                                <div class="stat-icon"><i class="fas fa-certificate"></i></div>
                                 <div class="stat-info">
                                     <h3 class="stat-number">3+</h3>
                                     <p class="stat-label">Certifications</p>
                                 </div>
                             </div>
                         </div>
-
                         <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Let's Talk
+                            <span>Let's Talk</span>
+                            <i class="fas fa-paper-plane"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- ══ BENTO GRID ══ -->
+        <section class="bento section" id="bento">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">// expertise</span>
+                    <h2 class="section-title">Core Expertise</h2>
+                </div>
+                <div class="bento-grid">
+
+                    <div class="bento-card bento-ai">
+                        <div class="bento-glow bento-glow-blue"></div>
+                        <div class="bento-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Agentic AI Systems</h3>
+                        <p>Building intelligent autonomous agents with PIAIC's advanced curriculum — LLMs, tool-use, and multi-agent orchestration.</p>
+                        <div class="bento-tags">
+                            <span>LLMs</span><span>Agents</span><span>Python</span>
+                        </div>
+                        <div class="bento-badge">PIAIC Certified</div>
+                    </div>
+
+                    <div class="bento-card bento-robot">
+                        <div class="bento-glow bento-glow-purple"></div>
+                        <div class="bento-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Robotic AI</h3>
+                        <p>Robotic AI engineering covering intelligent control systems and sensor integration.</p>
+                        <div class="bento-tags">
+                            <span>Robotics</span><span>Control</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-web">
+                        <div class="bento-glow bento-glow-cyan"></div>
+                        <div class="bento-icon"><i class="fas fa-code"></i></div>
+                        <h3>Modern Frontend</h3>
+                        <p>Crafting pixel-perfect, responsive interfaces with HTML, CSS & JavaScript.</p>
+                        <div class="bento-tags">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-hvac">
+                        <div class="bento-glow bento-glow-green"></div>
+                        <div class="bento-icon"><i class="fas fa-wind"></i></div>
+                        <h3>HVAC Engineering</h3>
+                        <p>UN-certified HVAC technician with expertise in refrigeration systems, AC installation, and ozone-safe servicing practices.</p>
+                        <div class="bento-tags">
+                            <span>HVACR Level 2</span><span>UN Certified</span><span>Refrigeration</span>
+                        </div>
+                        <div class="bento-badge bento-badge-green">UN Certified</div>
+                    </div>
+
+                    <div class="bento-card bento-stat">
+                        <div class="bento-glow bento-glow-pink"></div>
+                        <div class="bento-stat-grid">
+                            <div class="bento-stat-item">
+                                <span class="bento-num">3+</span>
+                                <span class="bento-label">Certifications</span>
+                            </div>
+                            <div class="bento-stat-item">
+                                <span class="bento-num">2</span>
+                                <span class="bento-label">Ongoing Courses</span>
+                            </div>
+                            <div class="bento-stat-item">
+                                <span class="bento-num">18</span>
+                                <span class="bento-label">Years Old</span>
+                            </div>
+                            <div class="bento-stat-item">
+                                <span class="bento-num">∞</span>
+                                <span class="bento-label">Curiosity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-quote">
+                        <div class="bento-glow bento-glow-purple"></div>
+                        <i class="fas fa-quote-left bento-quote-icon"></i>
+                        <p>"The future belongs to those who learn more skills and combine them in creative ways."</p>
+                        <span class="bento-quote-author">— Robert Greene</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SKILLS ══ -->
         <section class="skills section" id="skills">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">My Abilities</span>
+                    <span class="section-tag">// tech_stack</span>
                     <h2 class="section-title">Skills</h2>
                 </div>
-
                 <div class="skills-container">
-                    <!-- Software & AI Skills -->
                     <div class="skills-category">
                         <div class="skills-category-header">
-                            <div class="skills-category-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
+                            <div class="skills-category-icon"><i class="fas fa-laptop-code"></i></div>
                             <h3 class="skills-category-title">Software & AI</h3>
                         </div>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Software Engineering</span>
-                                    <span class="skill-level">Learning</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="40"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">HTML, CSS, JavaScript</span><span class="skill-level">65%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="65"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Agentic AI</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="60"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Agentic AI</span><span class="skill-level">60%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="60"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Robotic AI</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="55"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Robotic AI</span><span class="skill-level">55%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="55"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">HTML, CSS, JavaScript</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="65"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Web Development</span><span class="skill-level">60%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="60"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Web Development</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="60"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Software Engineering</span><span class="skill-level">40%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="40"></div></div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- HVAC & Environment Skills -->
                     <div class="skills-category">
                         <div class="skills-category-header">
-                            <div class="skills-category-icon">
-                                <i class="fas fa-snowflake"></i>
-                            </div>
+                            <div class="skills-category-icon"><i class="fas fa-snowflake"></i></div>
                             <h3 class="skills-category-title">HVAC & Environment</h3>
                         </div>
                         <div class="skills-list">
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">UN-Certified Good Servicing</span>
-                                    <span class="skill-level">Certified</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">AC Installation & Maintenance</span><span class="skill-level">85%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Ozone Layer Protection</span>
-                                    <span class="skill-level">Certified</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Refrigeration Systems</span><span class="skill-level">80%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">AC Installation & Maintenance</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Refrigerant Handling</span><span class="skill-level">85%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Refrigeration Systems</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">UN-Certified Servicing</span><span class="skill-level">85%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                             </div>
                             <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Electrical Troubleshooting</span>
-                                    <span class="skill-level">Intermediate</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="70"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Refrigerant Handling</span>
-                                    <span class="skill-level">Advanced</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
+                                <div class="skill-info"><span class="skill-name">Electrical Troubleshooting</span><span class="skill-level">70%</span></div>
+                                <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Soft Skills -->
                     <div class="skills-category soft-skills">
                         <div class="skills-category-header">
-                            <div class="skills-category-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
+                            <div class="skills-category-icon"><i class="fas fa-users"></i></div>
                             <h3 class="skills-category-title">Soft Skills</h3>
                         </div>
                         <div class="soft-skills-grid">
-                            <div class="soft-skill-card">
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Problem Solving</span>
-                            </div>
-                            <div class="soft-skill-card">
-                                <i class="fas fa-handshake"></i>
-                                <span>Team Collaboration</span>
-                            </div>
-                            <div class="soft-skill-card">
-                                <i class="fas fa-bolt"></i>
-                                <span>Quick Learner</span>
-                            </div>
-                            <div class="soft-skill-card">
-                                <i class="fas fa-rocket"></i>
-                                <span>Self-Motivated</span>
-                            </div>
-                            <div class="soft-skill-card">
-                                <i class="fas fa-comments"></i>
-                                <span>Communication</span>
-                            </div>
+                            <div class="soft-skill-card"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
+                            <div class="soft-skill-card"><i class="fas fa-handshake"></i><span>Team Collaboration</span></div>
+                            <div class="soft-skill-card"><i class="fas fa-bolt"></i><span>Quick Learner</span></div>
+                            <div class="soft-skill-card"><i class="fas fa-rocket"></i><span>Self-Motivated</span></div>
+                            <div class="soft-skill-card"><i class="fas fa-comments"></i><span>Communication</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- ══ EDUCATION ══ -->
         <section class="education section" id="education">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">My Journey</span>
-                    <h2 class="section-title">Education</h2>
+                    <span class="section-tag">// education</span>
+                    <h2 class="section-title">My Journey</h2>
                 </div>
-
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
+                        <div class="timeline-marker"><i class="fas fa-graduation-cap"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar"></i> Ongoing
-                            </span>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> Ongoing</span>
                             <h3 class="timeline-title">DAE Software Engineering</h3>
-                            <p class="timeline-institution">
-                                <i class="fas fa-university"></i> Government Monotechnic Institute, Karachi
-                            </p>
-                            <p class="timeline-description">
-                                Currently pursuing Diploma of Associate Engineering in Software Engineering, focusing on programming fundamentals, software development methodologies, and modern technologies.
-                            </p>
+                            <p class="timeline-institution"><i class="fas fa-university"></i> Government Monotechnic Institute, Karachi</p>
+                            <p class="timeline-description">Pursuing Diploma of Associate Engineering in Software Engineering — programming fundamentals, software development methodologies, and modern technologies.</p>
                             <span class="timeline-badge ongoing">In Progress</span>
                         </div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-robot"></i>
-                        </div>
+                        <div class="timeline-marker"><i class="fas fa-robot"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar"></i> Ongoing
-                            </span>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> Ongoing</span>
                             <h3 class="timeline-title">Certified Agentic & Robotic AI Engineer</h3>
-                            <p class="timeline-institution">
-                                <i class="fas fa-building"></i> PIAIC (Presidential Initiative for AI & Computing)
-                            </p>
-                            <p class="timeline-description">
-                                Advanced certification program covering Agentic AI, Robotic AI, and cutting-edge artificial intelligence technologies for building intelligent systems.
-                            </p>
+                            <p class="timeline-institution"><i class="fas fa-building"></i> PIAIC (Presidential Initiative for AI & Computing)</p>
+                            <p class="timeline-description">Advanced certification covering Agentic AI, Robotic AI, and cutting-edge artificial intelligence for building intelligent systems.</p>
                             <span class="timeline-badge ongoing">In Progress</span>
                         </div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-book"></i>
-                        </div>
+                        <div class="timeline-marker"><i class="fas fa-book"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar"></i> 2025
-                            </span>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2025</span>
                             <h3 class="timeline-title">Intermediate Pre-Engineering</h3>
-                            <p class="timeline-institution">
-                                <i class="fas fa-university"></i> Govt. Degree Boys College, Buffer Zone
-                            </p>
-                            <p class="timeline-description">
-                                Completed intermediate education with focus on Mathematics, Physics, and Chemistry, building a strong foundation for engineering studies.
-                            </p>
+                            <p class="timeline-institution"><i class="fas fa-university"></i> Govt. Degree Boys College, Buffer Zone</p>
+                            <p class="timeline-description">Completed intermediate education with focus on Mathematics, Physics, and Chemistry.</p>
                             <span class="timeline-badge completed">Completed</span>
                         </div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-school"></i>
-                        </div>
+                        <div class="timeline-marker"><i class="fas fa-school"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar"></i> 2023
-                            </span>
-                            <h3 class="timeline-title">Matriculation SSC</h3>
-                            <p class="timeline-institution">
-                                <i class="fas fa-university"></i> Standard Govt Boys Secondary School
-                            </p>
-                            <p class="timeline-description">
-                                Completed secondary school education with Science subjects, developing foundational knowledge in core scientific disciplines.
-                            </p>
+                            <span class="timeline-date"><i class="fas fa-calendar"></i> 2023</span>
+                            <h3 class="timeline-title">Matriculation SSC — Science</h3>
+                            <p class="timeline-institution"><i class="fas fa-university"></i> Standard Govt Boys Secondary School, New Karachi</p>
+                            <p class="timeline-description">Completed secondary education with Science subjects. Grade B — 61.36% — 675/1100 marks.</p>
                             <span class="timeline-badge completed">Completed</span>
                         </div>
                     </div>
@@ -452,278 +435,153 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
+        <!-- ══ CERTIFICATIONS ══ -->
         <section class="certifications section" id="certifications">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">My Achievements</span>
+                    <span class="section-tag">// achievements</span>
                     <h2 class="section-title">Certifications</h2>
                 </div>
-
                 <div class="certifications-grid">
                     <div class="certification-card">
-                        <div class="certification-icon">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
+                        <div class="certification-icon"><i class="fas fa-globe-americas"></i></div>
                         <div class="certification-content">
                             <h3 class="certification-title">Ozone Layer Protection & Climate Change</h3>
-                            <p class="certification-issuer">
-                                <i class="fas fa-building"></i> Ministry of Climate Change (UN-Connected)
-                            </p>
-                            <p class="certification-duration">
-                                <i class="fas fa-clock"></i> 3 Days Intensive Training
-                            </p>
-                            <div class="certification-badge">
-                                <i class="fas fa-award"></i> UN Certified
-                            </div>
+                            <p class="certification-issuer"><i class="fas fa-building"></i> Ministry of Climate Change (UN-Connected)</p>
+                            <p class="certification-duration"><i class="fas fa-clock"></i> 3 Days Intensive Training</p>
+                            <div class="certification-badge"><i class="fas fa-award"></i> UN Certified</div>
                         </div>
                     </div>
-
                     <div class="certification-card">
-                        <div class="certification-icon">
-                            <i class="fas fa-fan"></i>
-                        </div>
+                        <div class="certification-icon"><i class="fas fa-fan"></i></div>
                         <div class="certification-content">
                             <h3 class="certification-title">HVACR Level 2</h3>
-                            <p class="certification-issuer">
-                                <i class="fas fa-building"></i> Al Khair Technical Institute
-                            </p>
-                            <p class="certification-duration">
-                                <i class="fas fa-clock"></i> 6 Months Program
-                            </p>
-                            <div class="certification-badge">
-                                <i class="fas fa-certificate"></i> Professional
-                            </div>
+                            <p class="certification-issuer"><i class="fas fa-building"></i> Al Khair Technical Institute</p>
+                            <p class="certification-duration"><i class="fas fa-clock"></i> 6 Months Program</p>
+                            <div class="certification-badge"><i class="fas fa-certificate"></i> Professional</div>
                         </div>
                     </div>
-
                     <div class="certification-card">
-                        <div class="certification-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
+                        <div class="certification-icon"><i class="fas fa-code"></i></div>
                         <div class="certification-content">
                             <h3 class="certification-title">Web Development</h3>
-                            <p class="certification-issuer">
-                                <i class="fas fa-building"></i> Bano Qabil & Farooq-e-Azam
-                            </p>
-                            <p class="certification-duration">
-                                <i class="fas fa-clock"></i> Complete Course
-                            </p>
-                            <div class="certification-badge">
-                                <i class="fas fa-laptop-code"></i> Developer
-                            </div>
+                            <p class="certification-issuer"><i class="fas fa-building"></i> Bano Qabil & Farooq-e-Azam</p>
+                            <p class="certification-duration"><i class="fas fa-clock"></i> Complete Course</p>
+                            <div class="certification-badge"><i class="fas fa-laptop-code"></i> Developer</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- ══ PROJECTS ══ -->
         <section class="projects section" id="projects">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">My Work</span>
+                    <span class="section-tag">// my_work</span>
                     <h2 class="section-title">Projects</h2>
                 </div>
-
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-globe"></i>
-                            </div>
+                            <div class="project-image-placeholder"><i class="fas fa-globe"></i></div>
                             <div class="project-overlay">
-                                <a href="#" class="project-link" aria-label="View Project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="View Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
+                                <a href="#" class="project-link" aria-label="View Project"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Portfolio Website</h3>
-                            <p class="project-description">
-                                A modern, responsive personal portfolio website showcasing my skills, education, and projects. Built with clean code and smooth animations.
-                            </p>
+                            <p class="project-description">A futuristic personal portfolio with neural network animations, terminal effects, and glassmorphism design.</p>
                             <div class="project-tags">
                                 <span class="project-tag">HTML</span>
                                 <span class="project-tag">CSS</span>
                                 <span class="project-tag">JavaScript</span>
                             </div>
-                            <a href="#" class="btn btn-small">
+                            <a href="#" class="btn btn-small btn-outline">
                                 <i class="fas fa-eye"></i> View Details
                             </a>
                         </div>
                     </div>
-
                     <div class="project-card coming-soon">
                         <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="project-coming-soon">
-                                <span>Coming Soon</span>
-                            </div>
+                            <div class="project-image-placeholder"><i class="fas fa-brain"></i></div>
+                            <div class="project-coming-soon"><span>Coming Soon</span></div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">AI Assistant Project</h3>
-                            <p class="project-description">
-                                An upcoming AI-powered project leveraging Agentic AI technologies to create intelligent automation solutions.
-                            </p>
+                            <p class="project-description">AI-powered project leveraging Agentic AI for intelligent automation solutions.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
                                 <span class="project-tag">AI</span>
                                 <span class="project-tag">Machine Learning</span>
                             </div>
-                            <button class="btn btn-small btn-disabled" disabled>
-                                <i class="fas fa-clock"></i> In Development
-                            </button>
+                            <button class="btn btn-small btn-disabled" disabled><i class="fas fa-clock"></i> In Development</button>
                         </div>
                     </div>
-
                     <div class="project-card coming-soon">
                         <div class="project-image">
-                            <div class="project-image-placeholder">
-                                <i class="fas fa-temperature-low"></i>
-                            </div>
-                            <div class="project-coming-soon">
-                                <span>Coming Soon</span>
-                            </div>
+                            <div class="project-image-placeholder"><i class="fas fa-temperature-low"></i></div>
+                            <div class="project-coming-soon"><span>Coming Soon</span></div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Smart HVAC Monitor</h3>
-                            <p class="project-description">
-                                IoT-based HVAC monitoring system combining my technical expertise in both software development and HVAC systems.
-                            </p>
+                            <p class="project-description">IoT-based HVAC monitoring system combining software development and HVAC expertise.</p>
                             <div class="project-tags">
                                 <span class="project-tag">IoT</span>
                                 <span class="project-tag">HVAC</span>
                                 <span class="project-tag">Sensors</span>
                             </div>
-                            <button class="btn btn-small btn-disabled" disabled>
-                                <i class="fas fa-clock"></i> In Development
-                            </button>
+                            <button class="btn btn-small btn-disabled" disabled><i class="fas fa-clock"></i> In Development</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Languages Section -->
-        <section class="languages section" id="languages">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Communication</span>
-                    <h2 class="section-title">Languages</h2>
-                </div>
-
-                <div class="languages-grid">
-                    <div class="language-card">
-                        <div class="language-icon">
-                            <i class="fas fa-comment-dots"></i>
-                        </div>
-                        <h3 class="language-name">Urdu</h3>
-                        <div class="language-level">
-                            <span class="level-badge native">Native</span>
-                        </div>
-                        <div class="language-bar">
-                            <div class="language-progress" data-progress="100"></div>
-                        </div>
-                    </div>
-
-                    <div class="language-card">
-                        <div class="language-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="language-name">English</h3>
-                        <div class="language-level">
-                            <span class="level-badge proficient">Proficient</span>
-                        </div>
-                        <div class="language-bar">
-                            <div class="language-progress" data-progress="80"></div>
-                        </div>
-                    </div>
-
-                    <div class="language-card">
-                        <div class="language-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3 class="language-name">Sindhi</h3>
-                        <div class="language-level">
-                            <span class="level-badge basic">Basic</span>
-                        </div>
-                        <div class="language-bar">
-                            <div class="language-progress" data-progress="40"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
+        <!-- ══ CONTACT ══ -->
         <section class="contact section" id="contact">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">Get In Touch</span>
+                    <span class="section-tag">// get_in_touch</span>
                     <h2 class="section-title">Contact Me</h2>
                 </div>
-
                 <div class="contact-container">
                     <div class="contact-info">
-                        <h3 class="contact-info-title">Let's talk about everything!</h3>
-                        <p class="contact-info-text">
-                            Feel free to reach out for collaborations, opportunities, or just a friendly chat about technology and engineering.
-                        </p>
-
+                        <h3 class="contact-info-title">Let's build something great together.</h3>
+                        <p class="contact-info-text">Open to collaborations, opportunities, or just a chat about AI and engineering.</p>
                         <div class="contact-details">
                             <div class="contact-detail-item">
-                                <div class="contact-detail-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
+                                <div class="contact-detail-icon"><i class="fas fa-phone-alt"></i></div>
                                 <div class="contact-detail-content">
                                     <h4>Phone</h4>
                                     <a href="tel:+923478302597">0347-8302597</a>
                                 </div>
                             </div>
-
                             <div class="contact-detail-item">
-                                <div class="contact-detail-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
+                                <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
                                 <div class="contact-detail-content">
                                     <h4>Email</h4>
                                     <a href="mailto:noorahmad7316125@gmail.com">noorahmad7316125@gmail.com</a>
                                 </div>
                             </div>
-
                             <div class="contact-detail-item">
-                                <div class="contact-detail-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
+                                <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
                                 <div class="contact-detail-content">
                                     <h4>Location</h4>
                                     <p>Sector 5-D, New Karachi, Karachi</p>
                                 </div>
                             </div>
                         </div>
-
                         <div class="contact-social">
-                            <h4>Connect with me</h4>
+                            <h4>Connect</h4>
                             <div class="contact-social-links">
-                                <a href="https://github.com/noorahmadstudent2024-sketch" target="_blank" class="contact-social-link" aria-label="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/noor-ahmad-7b527b343/" target="_blank" class="contact-social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="mailto:noorahmad7316125@gmail.com" class="contact-social-link" aria-label="Gmail">
-                                    <i class="fab fa-google"></i>
-                                </a>
+                                <a href="https://github.com/noorahmadstudent2024-sketch" target="_blank" class="contact-social-link"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/noor-ahmad-7b527b343/" target="_blank" class="contact-social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:noorahmad7316125@gmail.com" class="contact-social-link"><i class="fab fa-google"></i></a>
                             </div>
                         </div>
                     </div>
-
                     <div class="contact-form-wrapper">
                         <form class="contact-form" id="contact-form">
                             <div class="form-group">
@@ -731,36 +589,32 @@
                                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                                 <span class="form-error" id="name-error"></span>
                             </div>
-
                             <div class="form-group">
                                 <label for="email">Your Email</label>
                                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                                 <span class="form-error" id="email-error"></span>
                             </div>
-
                             <div class="form-group">
                                 <label for="subject">Subject</label>
                                 <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
                                 <span class="form-error" id="subject-error"></span>
                             </div>
-
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+                                <textarea id="message" name="message" placeholder="Write your message..." rows="5" required></textarea>
                                 <span class="form-error" id="message-error"></span>
                             </div>
-
                             <button type="submit" class="btn btn-primary btn-submit">
                                 <span class="btn-text">Send Message</span>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
-
                             <div class="form-status" id="form-status"></div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
@@ -769,61 +623,44 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#home" class="footer-logo">
-                        <span class="logo-text">NOOR AHMAD</span>
-                        <span class="logo-highlight">SIDDIQUE</span>
+                        <span class="logo-bracket">[</span>
+                        <span class="logo-name">NOOR</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-ai">AI</span>
+                        <span class="logo-bracket">]</span>
                     </a>
                     <p class="footer-tagline">Aspiring AI Engineer & Software Developer</p>
                 </div>
-
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#bento">Expertise</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-social">
                     <h4>Follow Me</h4>
                     <div class="footer-social-links">
-                        <a href="https://github.com/noorahmadstudent2024-sketch" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/noor-ahmad-7b527b343/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:noorahmad7316125@gmail.com" aria-label="Gmail">
-                            <i class="fab fa-google"></i>
-                        </a>
+                        <a href="https://github.com/noorahmadstudent2024-sketch" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/noor-ahmad-7b527b343/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:noorahmad7316125@gmail.com"><i class="fab fa-google"></i></a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p class="copyright">
-                    &copy; 2025 Noor Ahmad Siddique. All Rights Reserved.
-                </p>
+                <p class="copyright">&copy; 2026 Noor Ahmad Siddique. All Rights Reserved.</p>
                 <p class="footer-credit">
-                    Built with passion using <i class="fas fa-heart"></i> HTML, CSS & JavaScript
-                    <span style="margin-left: 20px; opacity: 0.5;">
-                        <a href="admin.html" style="color: inherit; text-decoration: none;" title="Admin Panel">
-                            <i class="fas fa-cog"></i>
-                        </a>
-                    </span>
+                    Built with <i class="fas fa-heart"></i> HTML, CSS & JavaScript
+                    <a href="admin.html" title="Admin"><i class="fas fa-cog" style="margin-left:16px;opacity:0.3"></i></a>
                 </p>
             </div>
         </div>
-
-        <!-- Back to Top Button -->
-        <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
-            <i class="fas fa-chevron-up"></i>
-        </a>
+        <a href="#home" class="back-to-top" id="back-to-top"><i class="fas fa-chevron-up"></i></a>
     </footer>
 
-    <!-- JavaScript -->
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
