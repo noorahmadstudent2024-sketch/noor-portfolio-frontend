@@ -421,7 +421,7 @@ body.light-mode .terminal-card { background:rgba(8,12,30,0.9); border-color:rgba
 }
 .terminal-body { padding:1rem 1.25rem; min-height:160px }
 .terminal-line {
-  font-family:var(--mono); font-size:0.78rem;
+  font-family:var(--mono); font-size:0.8rem;
   line-height:1.9; white-space:pre-wrap; word-break:break-word;
 }
 .t-prompt { color:var(--blue); margin-right:0.5rem }
@@ -929,9 +929,12 @@ body.light-mode .footer-social-links a { background:rgba(255,255,255,0.8) }
   .hero-visual { order:2; max-width:500px; width:100%; margin:0 auto }
   /* Hide neural canvas on tablet/mobile (saves space) */
   .neural-card { display:none }
-  /* Center hero elements */
-  .hero-badge,.hero-meta,.hero-cta,.hero-socials { justify-content:center }
-  .hero-desc { max-width:100%; margin-left:auto; margin-right:auto }
+  /* Center hero elements — perfectly */
+  .hero-name    { text-align:center; width:100% }
+  .hero-role    { text-align:center }
+  .hero-desc    { text-align:center; max-width:100%; margin-left:auto; margin-right:auto }
+  .hero-badge,.hero-meta,.hero-cta,.hero-socials { justify-content:center; width:100% }
+  .hero-info    { display:flex; flex-direction:column; align-items:center }
   /* About */
   .about-container { grid-template-columns:1fr; gap:2.5rem }
   .about-image-wrap { max-width:260px; margin:0 auto }
@@ -986,10 +989,11 @@ body.light-mode .footer-social-links a { background:rgba(255,255,255,0.8) }
   .certifications-grid { grid-template-columns:1fr }
   .projects-grid       { grid-template-columns:1fr }
 
-  /* Bento cards */
-  .bento-grid { grid-template-columns:1fr; display:flex; flex-direction:column }
+  /* Bento cards — 1 column stacking */
+  .bento-grid { grid-template-columns:1fr !important; display:flex; flex-direction:column }
   .bento-ai,.bento-robot,.bento-web,
-  .bento-hvac,.bento-stat,.bento-quote { grid-column:unset }
+  .bento-hvac,.bento-stat,.bento-quote { grid-column:unset; width:100% }
+  .bento-stat-grid { grid-template-columns:1fr 1fr; gap:0.75rem }
 
   /* Footer */
   .footer-content { grid-template-columns:1fr; gap:1.75rem }
@@ -1021,7 +1025,7 @@ body.light-mode .footer-social-links a { background:rgba(255,255,255,0.8) }
 
   /* Terminal compact */
   .terminal-body { min-height:110px; padding:0.85rem 1rem }
-  .terminal-line { font-size:0.7rem }
+  .terminal-line { font-size:0.8rem }
   .terminal-header { padding:0.5rem 0.85rem }
   .dot-red,.dot-yellow,.dot-green { width:9px; height:9px }
   .terminal-title { font-size:0.6rem }
@@ -1083,7 +1087,7 @@ body.light-mode .footer-social-links a { background:rgba(255,255,255,0.8) }
 
   /* Terminal 90% width */
   .terminal-card { width:90%; margin:0 auto }
-  .terminal-line { font-size:0.68rem }
+  .terminal-line { font-size:0.8rem }
 
   /* Buttons full-width stack */
   .hero-cta {
