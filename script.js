@@ -22,62 +22,37 @@ const sections = document.querySelectorAll('section[id]');
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-// ========== Dark Mode Toggle ==========
+// ========== Theme Toggle (default: dark) ==========
 function initTheme() {
-    // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.body.classList.add('dark-mode');
-        updateThemeIcon(true);
-    } else {
-        document.body.classList.remove('dark-mode');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
         updateThemeIcon(false);
+    } else {
+        document.body.classList.remove('light-mode');
+        updateThemeIcon(true);
     }
 }
 
 function updateThemeIcon(isDark) {
     if (isDark) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    } else {
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
+    } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
     }
 }
 
 function toggleTheme() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateThemeIcon(isDark);
-
-    // Add a nice rotation animation to the icon
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    updateThemeIcon(!isLight);
     themeIcon.style.transform = 'rotate(360deg)';
-    setTimeout(() => {
-        themeIcon.style.transform = 'rotate(0deg)';
-    }, 500);
+    setTimeout(() => { themeIcon.style.transform = ''; }, 400);
 }
 
-// Theme toggle event listener
-if (themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
-}
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-        if (e.matches) {
-            document.body.classList.add('dark-mode');
-            updateThemeIcon(true);
-        } else {
-            document.body.classList.remove('dark-mode');
-            updateThemeIcon(false);
-        }
-    }
-});
-
-// Initialize theme on page load
+if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 initTheme();
 
 // ========== Loader ==========
@@ -122,20 +97,20 @@ window.addEventListener('scroll', () => {
 // ========== Mobile Navigation ==========
 // Open menu
 navToggle.addEventListener('click', () => {
-    navMenu.classList.add('show');
+    navMenu.classList.add('open');
     document.body.classList.add('no-scroll');
 });
 
 // Close menu
 navClose.addEventListener('click', () => {
-    navMenu.classList.remove('show');
+    navMenu.classList.remove('open');
     document.body.classList.remove('no-scroll');
 });
 
 // Close menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
+        navMenu.classList.remove('open');
         document.body.classList.remove('no-scroll');
     });
 });
@@ -143,7 +118,7 @@ navLinks.forEach(link => {
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('show');
+        navMenu.classList.remove('open');
         document.body.classList.remove('no-scroll');
     }
 });
@@ -545,7 +520,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 document.addEventListener('keydown', (e) => {
     // Close mobile menu with Escape key
     if (e.key === 'Escape') {
-        navMenu.classList.remove('show');
+        navMenu.classList.remove('open');
         document.body.classList.remove('no-scroll');
     }
 });
