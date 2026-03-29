@@ -2,8 +2,7 @@
    NOOR AHMAD SIDDIQUE — 2026 Futuristic Portfolio
    ═══════════════════════════════════════════════ */
 
-const API_BASE_URL = (typeof CONFIG !== 'undefined' && CONFIG.API_BASE_URL)
-  ? CONFIG.API_BASE_URL : 'http://localhost:5000/api';
+emailjs.init({ publicKey: CONFIG.EMAILJS_PUBLIC_KEY });
 
 // ══ DOM ══
 const loader       = document.getElementById('loader');
@@ -338,43 +337,43 @@ if (statsSection) {
 // ══ Contact Form ══
 contactForm && contactForm.addEventListener('submit', async function(e) {
   e.preventDefault();
-  const name    = document.getElementById('name');
-  const email   = document.getElementById('email');
-  const subject = document.getElementById('subject');
-  const message = document.getElementById('message');
-  const status  = document.getElementById('form-status');
+  const nameEl    = document.getElementById('name');
+  const emailEl   = document.getElementById('email');
+  const subjectEl = document.getElementById('subject');
+  const messageEl = document.getElementById('message');
+  const status    = document.getElementById('form-status');
   clearErrors();
 
   let valid = true;
-  if (!name.value.trim())    { showErr('name-error','Please enter your name');    name.style.borderColor='#f87171';    valid=false; }
-  if (!email.value.trim())   { showErr('email-error','Please enter your email');  email.style.borderColor='#f87171';   valid=false; }
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { showErr('email-error','Invalid email'); email.style.borderColor='#f87171'; valid=false; }
-  if (!subject.value.trim()) { showErr('subject-error','Please enter a subject'); subject.style.borderColor='#f87171'; valid=false; }
-  if (!message.value.trim()) { showErr('message-error','Please enter a message');  message.style.borderColor='#f87171';valid=false; }
-
+  if (!nameEl.value.trim())    { showErr('name-error','Please enter your name');     nameEl.style.borderColor='#f87171';    valid=false; }
+  if (!emailEl.value.trim())   { showErr('email-error','Please enter your email');   emailEl.style.borderColor='#f87171';   valid=false; }
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) { showErr('email-error','Invalid email'); emailEl.style.borderColor='#f87171'; valid=false; }
+  if (!subjectEl.value.trim()) { showErr('subject-error','Please enter a subject');  subjectEl.style.borderColor='#f87171'; valid=false; }
+  if (!messageEl.value.trim()) { showErr('message-error','Please enter a message');  messageEl.style.borderColor='#f87171'; valid=false; }
   if (!valid) return;
 
-  const btn = this.querySelector('.btn-submit');
+  const btn     = this.querySelector('.btn-submit');
   const btnText = btn.querySelector('.btn-text');
-  btnText.textContent = 'Sending...'; btn.disabled = true;
+  btnText.textContent = 'Sending...';
+  btn.disabled = true;
 
   try {
-    const res = await fetch(`${API_BASE_URL}/contact`, {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ name:name.value.trim(), email:email.value.trim(), message:`Subject: ${subject.value.trim()}\n\n${message.value.trim()}` })
+    await emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, {
+      from_name:  nameEl.value.trim(),
+      from_email: emailEl.value.trim(),
+      subject:    subjectEl.value.trim(),
+      message:    messageEl.value.trim(),
     });
-    const data = await res.json();
-    if (res.ok && data.success) {
-      status.textContent = 'Message sent! I\'ll get back to you soon.';
-      status.className = 'form-status success';
-      this.reset();
-    } else throw new Error(data.message || 'Failed');
-  } catch(err) {
-    status.textContent = err.message || 'Failed to send. Please try again.';
+    status.textContent = "Message sent! I'll get back to you soon. ✓";
+    status.className = 'form-status success';
+    this.reset();
+  } catch (err) {
+    status.textContent = 'Failed to send. Please try again.';
     status.className = 'form-status error';
   } finally {
-    btnText.textContent = 'Send Message'; btn.disabled = false;
-    setTimeout(() => { status.textContent=''; status.className='form-status'; }, 5000);
+    btnText.textContent = 'Send Message';
+    btn.disabled = false;
+    setTimeout(() => { status.textContent = ''; status.className = 'form-status'; }, 6000);
   }
 });
 
